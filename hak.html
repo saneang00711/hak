@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="km"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>នាងប្តូរប្រាក់</title>
+    <style>
+        body {
+            font-family: 'Khmer OS Content', Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2e8b57;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e9f7ef;
+            border-radius: 5px;
+            border-left: 5px solid #2e8b57;
+        }
+        .rate-info {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            color: #666;
+        }
+        .history {
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .history h3 {
+            color: #2e8b57;
+            margin-bottom: 15px;
+        }
+        .history-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        .clear-history {
+            background-color: #f44336;
+            margin-top: 15px;
+        }
+        .clear-history:hover {
+            background-color: #d32f2f;
+        }
+        .amount-in-words {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>គណនាប្រាក់ប្តូរ រៀល ⇄ ដុល្លារ</h1>
+        
+        <form method="post" action="">
+            <div class="form-group">
+                <label for="amount">ចំនួនប្រាក់:</label>
+                <input type="number" id="amount" name="amount" placeholder="បញ្ចូលចំនួនប្រាក់" required="" step="0.01">
+            </div>
+            
+            <div class="form-group">
+                <label for="currency">ប្រភេទប្តូរ:</label>
+                <select id="currency" name="currency" required="">
+                    <option value="" selected="selected">-- ជ្រើសរើស --</option>
+                    <option value="usd_to_riel">ដុល្លារ ($) → រៀល (៛)</option>
+                    <option value="riel_to_usd">រៀល (៛) → ដុល្លារ ($)</option>
+                </select>
+            </div>
+            
+            <button type="submit" name="convert">គណនា</button>
+        </form>
+        
+        <div class="result"><h3>លទ្ធផល:</h3><p>100៛ = $0.03</p><div class="amount-in-words"><p><strong>ជាអក្សរ:</strong> មួយរយរៀល ស្មើនឹង  dollars</p></div></div>        
+        <div class="rate-info">
+            អត្រាប្តូរប្រាក់: 1 USD = 4,000៛
+        </div>
+        
+        <div class="history">
+            <h3>ប្រវត្តិបំលាស់ប្តូរ</h3>
+            <div class="history-item"><div><span>RIEL → USD</span><br><span>100៛ → $0.03</span><br><small>មួយរយរៀល ស្មើនឹង  dollars</small></div><span>13:51:42</span></div><div class="history-item"><div><span>USD → RIEL</span><br><span>$1.50 → 6,000៛</span><br><small>one dollars equals ប្រាំមួយពាន់រៀល</small></div><span>13:49:28</span></div><div class="history-item"><div><span>USD → RIEL</span><br><span>$1.00 → 4,000៛</span><br><small>one dollar equals បួនពាន់រៀល</small></div><span>13:49:03</span></div><form method="post" action=""><button type="submit" name="clear_history" class="clear-history">លុបប្រវត្តិ</button></form>        </div>
+    </div>
+
+</body></html>
